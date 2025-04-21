@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>SO question 2803532</title>
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('input.deletable').wrap('<span class="deleteicon"></span>').after($('<span>x</span>').click(function() {
+                    $(this).prev('input').val('').trigger('change').focus();
+                }));
+            });
+        </script>
+        <style>
+            span.deleteicon {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+            }
+            span.deleteicon span {
+                position: absolute;
+                display: block;
+                right: 3px;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                color: #fff;
+                background-color: #ccc;
+                font: 13px monospace;
+                text-align: center;
+                line-height: 1em;
+                cursor: pointer;
+            }
+            span.deleteicon input {
+                padding-right: 18px;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" class="deletable">
+    </body>
+</html>

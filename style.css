@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+.flex {
+    display: flex;
+    gap: 40px;
+}
+
+.right {
+    display: flex;
+    gap: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 50px;
+    padding-inline: 50px;
+}
+
+input {
+    padding-left: 10px;
+    width: 316px;
+    height: 40px;
+    border-radius: 5px;
+    gap: 10px;
+    border: 1px solid #A1A1A1
+}
+
+.file {
+    padding-top: 20px;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.block {
+    flex-grow: 1;
+}
+
+.block p {
+    margin-bottom: 5px;
+}
+
+.block input {
+    width: 100%;
+    height: 40px;
+}
+
+.button {
+    width: 261px;
+    height: 47px;
+    border-radius: 65px;
+    background: #474747;
+    color: white;
+}
+
+.img {
+    width: 517px;
+    height: 344px;
+}
+
+.block select {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border-width: 1px;
+    padding-top: 2px;
+    padding-right: 269px;
+    padding-bottom: 2px;
+    padding-left: 12px;
+}
+
+.select {
+    padding-left: 100px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 190%;
+    letter-spacing: -1.1%;
+}
+
+.input-with-button {
+    position: relative;
+    display: inline-block;
+}
+
+.input-with-button input {
+    padding-right: 60px;
+}
+
+.input-with-button button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+
+
+.footer {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.header p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: -1.1%;
+}
+
+.check {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    border: none;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.custom-file-input::before {
+    content: 'Select some files';
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 10px 8px;
+    margin-left: -10px;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+
+.custom-file-input:hover::before {
+    border-color: black;
+}
+
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.error {
+    position: relative;
+    color: red;
+
+    input {
+        border-color: red;
+        color: red;
+    }
+
+    ::placeholder {
+        color: red;
+    }
+
+    .feel {
+        color: #EE0004;
+    }
+
+    .p {
+        color: #EE0004;
+    }
+}
+
+.box.error::after {
+    content: "!";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: -22px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -27px;
+}
+
+.boxes.error::after {
+    content: "!";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 325px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -27px;
+}
+
+.block p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    color: #49454F;
+
+}

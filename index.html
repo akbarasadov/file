@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./select/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div class="container">
+
+
+        <div class="header">
+            <div class="left">
+                <h1>Информация о заявителе</h1>
+                <p>Заполните форму</p>
+            </div>
+            <div class="right">
+                <p class="inform all-text">All: 15</p>
+                <p class="inform need-text">Need: 12</p>
+                <p class="inform success-text">Success: 8/12</p>
+                <p class="inform error-text">Error: 4/12</p>
+            </div>
+        </div>
+
+        <div class="flex">
+            <div class="block">
+                <p>First name*</p>
+                <input type="text" placeholder="input" class="deletable">
+            </div>
+            <div class="block box">
+                <p>First name</p>
+                <input type="text" placeholder="input" class="required deletable name" name="First name">
+            </div>
+            <div class="block">
+                <p>Last Name*</p>
+                <input type="text" placeholder="input" class="deletable" name="">
+            </div>
+        </div>
+        <div class="flex">
+            <div class="block box">
+                <p>Social security</p>
+                <input type="text" placeholder="input" class="required deletable security" name="Social security">
+            </div>
+            <div class="block box" >
+                <p>Birth date</p>
+                <input type="date" placeholder="input" class="required deletable all" name="Birth date">
+            </div>
+        </div>
+        <div class="flex">
+            <div class="block box">
+                <p>Email adress</p>
+                <input type="email" placeholder="input" class="required deletable email" name="Email adress">
+            </div>
+            <div class="block box">
+                <p>Home phone</p>
+                <input type="text" placeholder="input" class="required deletable tel" name="Home phone">
+            </div>
+            <div class="block box">
+                <p>Cell Phone</p>
+                <input type="text" placeholder="input" class="required deletable" name="Cell Phone">
+            </div>
+        </div>
+        <div class="flex">
+            <div class="block box">
+                <p>Street adress</p>
+                <input type="text" placeholder="input" class="required deletable all" name="Street adress">
+            </div>
+            <div class="block box">
+                <p>ZIP Postal code</p>
+                <input type="text" placeholder="input" class="required deletable all" name="ZIP Postal code">
+            </div>
+        </div>
+        <div class="flex">
+            <div class="block box">
+                <p>Appartment, suite etc.</p>
+                <input type="text" placeholder="input" class="required deletable all" name="Appartment, suite etc.">
+            </div>
+            <div class="block box">
+                <p>City</p>
+                <input type="text" placeholder="input" class="required deletable all" name="City">
+            </div>
+            <div class="block box">
+                <p>State province</p>
+                <input type="text" placeholder="input" class="required deletable all" name="State province">
+            </div>
+        </div>
+        <div class="flex">
+            <div class="block">
+                <p>Type of residence</p>
+                <div class="boxes">
+                    <select>
+                        <option data-display="Type of residence">Nothing</option>
+                        <option value="1">Some option</option>
+                        <option value="2">Another option</option>
+                        <option value="3" disabled>A disabled option</option>
+                        <option value="4">Potato</option>
+                    </select>
+                </div>
+            </div>
+            <div class="block">
+                <p>Type of residence</p>
+                <div class="boxes">
+                    <select>
+                        <option data-display="Type of residence">Nothing</option>
+                        <option value="1">Some option</option>
+                        <option value="2">Another option</option>
+                        <option value="3" disabled>A disabled option</option>
+                        <option value="4">Potato</option>
+                    </select>
+                </div>
+            </div>
+            <div class="block">
+                <p>Type of residence</p>
+                <div class="boxes">
+                    <select>
+                        <option data-display="Type of residence">Nothing</option>
+                        <option value="1">Some option</option>
+                        <option value="2">Another option</option>
+                        <option value="3" disabled>A disabled option</option>
+                        <option value="4">Potato</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="file box boxes">
+            <input class="input-file custom-file-input required all" type="file">
+        </div>
+
+        <img class="image" src="" alt="">
+
+        <div class="footer">
+            <input type="checkbox" class="check">
+            <p>Please check if Co-Applicant is needed</p>
+        </div>
+            <button class="button">Отправить форму</button>
+    </div>
+
+
+    <script src="./js.js"></script>
+    <script src="./select/java.js"></script>
+</body>
+
+</html>
