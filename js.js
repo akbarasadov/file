@@ -6,7 +6,6 @@ file.onchange = (e) => {
     let selectedFile = file.files[0]
     if (selectedFile) {
         let objectURL = URL.createObjectURL(selectedFile)
-        console.log(selectedFile, objectURL);
         img.src = objectURL
         img.classList.add("img")
     }
@@ -14,7 +13,6 @@ file.onchange = (e) => {
 let email = document.querySelector(".email")
 let name = document.querySelector(".name")
 let tel = document.querySelector(".tel")
-let snn = document.querySelector(".security")
 let all = document.querySelectorAll(".all")
 
 let alltext = document.querySelector(".all-text")
@@ -24,7 +22,7 @@ let errortext = document.querySelector(".error-text")
 let block = document.querySelectorAll(".block")
 let required = document.querySelectorAll(".required")
 
-let inputValue = [email, name, tel, snn, ...all]
+let inputValue = [email, name, tel, ...all]
 
 
 let regex = [
@@ -34,61 +32,56 @@ let regex = [
     /^[a-zA-Z\s'-]+$/,
     //tel
     /^\+998[-\s]?\d{2}[-\s]?\d{3}[-\s]?\d{2}[-\s]?\d{2}$/,
-    //snn
-    /^\d{3}-\d{2}-\d{4}$/,
 ]
+
+let allvalues = {}
+
 alltext.textContent = "All: " + block.length
 needtext.textContent = "Need: " + required.length
-
 button.onclick = () => {
-    inputValue.forEach((input, idx) => {
-        let value = input.value
-        let box = input.closest(".box")
-        let error = 0
-        let success = 0
+    let error = 0
+    let success = 0
 
+    allvalues = {}
+
+    inputValue.forEach((input, idx) => {
+
+        if (!input || typeof input.value !== "string") return
+
+        let value = input.value;
+        let box = input.closest(".box");
 
         if (idx < regex.length) {
-
             if (value === "") {
                 error++
-                box.classList.add("error")
-            } else if (regex[idx].test(value) === false) {
+                box.classList.add("error");
+            } else if (!regex[idx].test(value)) {
                 error++
-                box.classList.add("error")
+                box.classList.add("error");
             } else {
-                box.classList.remove("error")
                 success++
+                box.classList.remove("error");
             }
-
         } else {
-
             if (value === "") {
                 error++
-                box.classList.add("error")
+                box.classList.add("error");
             } else {
                 success++
-                box.classList.remove("error")
+                box.classList.remove("error");
             }
         }
-        console.log(required.length - errortext.textContent);
-        console.log(error);
-        console.log(required.length);
-
-        if (error === 0) {
-            errortext.textContent = "Error: " + error + "/" + required.length
-            successtext.textContent = "Success: " + required.length + "/" + required.length
-        } else if (success === 0) {
-            errortext.textContent = "Error: " + required.length + "/" + required.length
-            successtext.textContent = "Success: " + success + "/" + required.length
-        }else{
-            if (error === 0) {
-                errortext.textContent = "Error: " + error + "/" + required.length
-                successtext.textContent = "Success: " + success + "/" + required.length
-            }
-        }
+        allvalues[input.name] = input.value
 
 
+    });
 
-    })
-}
+    errortext.textContent = `Error: ${error}/${required.length}`;
+    successtext.textContent = `Success: ${success}/${required.length}`;
+
+    if (error === 0) {
+        console.log(allvalues);
+    }
+
+
+};
